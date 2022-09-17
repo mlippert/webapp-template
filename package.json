@@ -1,0 +1,35 @@
+{
+  "name": "@mlippert/webapp-template",
+  "version": "0.0.1",
+  "description": "React/Redux Web Application Template",
+  "license": "MIT",
+  "author": "Michael Jay Lippert <mlippert255@gmail.com>",
+  "contributors": [],
+  "homepage": "https://github.com/mlippert/webapp-template#readme",
+  "keywords": [
+    "metrics"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mlippert/webapp-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mlippert/webapp-template/issues"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "type": "module",
+  "files": [],
+  "scripts": {
+    "test": "echo \"Warning: no tests defined\" && exit 0"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}
