@@ -17,11 +17,14 @@ extends:
   - plugin:import/errors
   - plugin:import/warnings
   - plugin:promise/recommended
+  - plugin:jsx-a11y/recommended
+  - plugin:react-hooks/recommended
 parser: "@typescript-eslint/parser"
 parserOptions:
   ecmaVersion: 2022
   sourceType: module
   ecmaFeatures:
+    jsx: true
     impliedStrict: true
 settings:
   import/resolver:
@@ -38,6 +41,9 @@ settings:
     - .jsx
     - .ts
     - .tsx
+  react:
+    pragma: React
+    version: detect
 rules:
   '@typescript-eslint/member-delimiter-style': error
   array-bracket-spacing:
@@ -127,6 +133,24 @@ rules:
       ArrayExpression: first
       ObjectExpression: first
       ImportDeclaration: first
+  jsx-a11y/anchor-is-valid:
+    - error
+    -
+      components:
+        - Link
+      specialLink:
+        - to
+  jsx-a11y/click-events-have-key-events: error
+  jsx-a11y/label-has-for:
+    - error
+    -
+      required:
+        every:
+          - id
+  jsx-a11y/no-static-element-interactions: error
+  jsx-quotes:
+    - error
+    - prefer-single
   key-spacing:
     - error
     -
@@ -234,6 +258,117 @@ rules:
     -
       avoidEscape: true
       allowTemplateLiterals: true
+  react-hooks/rules-of-hooks: error
+  react-hooks/exhaustive-deps: warn
+  react-native/no-unused-styles: off
+  react-native/no-inline-styles: off
+  react-native/no-color-literals: warn
+  react-native/no-raw-text: off
+  react-native/no-single-element-style-arrays: error
+  react-native/sort-styles: off
+  react-native/split-platform-components: error
+  react/display-name:
+    - off
+    -
+      ignoreTranspilerName: false
+  react/forbid-component-props: off
+  react/forbid-elements:
+    - error
+    -
+      forbid:
+        - embed
+  react/jsx-boolean-value:
+    - error
+    - always
+  react/jsx-closing-bracket-location:
+    - error
+    -
+      location: tag-aligned
+  react/jsx-curly-spacing:
+    - error
+    - never
+  react/jsx-equals-spacing:
+    - error
+    - never
+  react/jsx-filename-extension:
+    - error
+    -
+      extensions:
+        - .jsx
+        - .tsx
+  react/jsx-first-prop-new-line:
+    - error
+    - multiline
+  react/jsx-handler-names: off
+  react/jsx-indent:
+    - error
+    - 4
+  react/jsx-indent-props:
+    - error
+    - 4
+  react/jsx-key: error
+  react/jsx-max-props-per-line:
+    - error
+    -
+      maximum: 1
+      when: multiline
+  react/jsx-no-bind: off
+  react/jsx-no-comment-textnodes: error
+  react/jsx-no-duplicate-props:
+    - error
+    -
+      ignoreCase: false
+  react/jsx-no-literals: error
+  react/jsx-no-target-blank: error
+  react/jsx-no-undef: error
+  react/jsx-pascal-case: error
+  react/jsx-tag-spacing:
+    - error
+    -
+      closingSlash: never
+      beforeSelfClosing: never
+      afterOpening: never
+  react/jsx-uses-react: error
+  react/jsx-uses-vars: error
+  react/jsx-wrap-multilines: error
+  react/no-array-index-key: warn
+  react/no-children-prop: error
+  react/no-danger: off
+  react/no-danger-with-children: error
+  react/no-deprecated: warn
+  react/no-did-mount-set-state: error
+  react/no-did-update-set-state: error
+  react/no-direct-mutation-state: error
+  react/no-find-dom-node: warn
+  react/no-is-mounted: error
+  react/no-multi-comp:
+    - error
+    -
+      ignoreStateless: true
+  react/no-render-return-value: error
+  react/no-set-state: off
+  react/no-string-refs: error
+  react/no-unescaped-entities: error
+  react/no-unknown-property: error
+  react/no-unused-prop-types:
+    - warn
+    -
+      skipShapeProps: true
+  react/prefer-es6-class: error
+  react/prefer-stateless-function: off
+  react/prop-types:
+    - error
+    -
+      ignore:
+        - location
+        - history
+        - component
+  react/require-default-props: off
+  react/require-optimization: off
+  react/require-render-return: error
+  react/self-closing-comp: error
+  react/sort-comp: off
+  react/style-prop-object: error
   rest-spread-spacing: error
   semi: off
   '@typescript-eslint/semi':
